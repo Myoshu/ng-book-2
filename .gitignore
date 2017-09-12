@@ -3,7 +3,7 @@
 # compiled output
 /tmp
 /out-tsc
-/e2e
+/dist
 
 # dependencies
 /node_modules
@@ -40,11 +40,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-.angular-cli.json
-.editorconfig
-karma.conf.js
-package*
-protractor.conf.*
-tsconfig.json
-tslint.json
