@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-sku-with-builder',
@@ -8,11 +8,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class FormSkuWithBuilderComponent implements OnInit {
   myForm: FormGroup;
+  sku: AbstractControl;
 
   constructor(fb: FormBuilder) {
     this.myForm = fb.group({
-      'sku': ['ABC123']
+      'sku': ['', Validators.required]
     });
+
+    this.sku = this.myForm.controls['sku'];
    }
 
   ngOnInit() {
