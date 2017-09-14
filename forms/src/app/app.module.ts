@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormSkuComponent } from './form-sku/form-sku.component';
+import { FormSkuWithBuilderComponent } from './form-sku-with-builder/form-sku-with-builder.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormSkuComponent
+    FormSkuComponent,
+    FormSkuWithBuilderComponent
   ],
   imports: [
     BrowserModule,
