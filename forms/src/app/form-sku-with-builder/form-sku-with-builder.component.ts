@@ -8,16 +8,30 @@ import { AbstractControl, FormControl, FormBuilder, FormGroup, Validators } from
 })
 export class FormSkuWithBuilderComponent implements OnInit {
   myForm: FormGroup;
+  productName: string;
   sku: AbstractControl;
 
   constructor(fb: FormBuilder) {
     this.myForm = fb.group({
-      'sku': ['', Validators.compose([
+      /*'sku': ['', Validators.compose([
         Validators.required, this.skuValidator
-      ])]
+      ])]*/
+      'productName': ['', Validators.required]
     });
 
-    this.sku = this.myForm.controls['sku'];
+    /*this.sku = this.myForm.controls['sku'];
+
+    this.sku.valueChanges.subscribe(
+      (value: string) => {
+        console.log('sku changed to: ', value);
+      }
+    );
+
+    this.myForm.valueChanges.subscribe(
+      (form: any) => {
+        console.log('form changed to: ', form);
+      }
+    );*/
    }
 
   ngOnInit() {
@@ -27,10 +41,10 @@ export class FormSkuWithBuilderComponent implements OnInit {
     console.log('You submitted value: ', value);
   }
 
-  skuValidator(control: FormControl): { [s: string]: boolean} {
+  /*skuValidator(control: FormControl): { [s: string]: boolean} {
     if (!control.value.match(/^123/)) {
       return {invalidSku: true};
     }
-  }
+  }*/
 
 }
